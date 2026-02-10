@@ -1,23 +1,36 @@
-export const mammals = [
-    {
-        name: "Echidna",
-        group: "Mammals",
-        lifespan: "50 years",
-        length: "76cm",
-        weight: "10kg",
-        found: "Throughout Australia",
-        food: "insects such as ants and termites, beetle larvae and worms",
-        description: `Echidnas, also called spiny anteaters, are walking contradictions.
-         They are mammals, but they lay eggs. They are often classified as long- or sort-beaked, but don't have beaks at all,
-          in the traditional sense; they have fleshy noses that can be either on the long side or rather short. 
-          They don't really look like true anteaters (Myrmecophaga tridactyla), either, and they are not closely related to them. 
-          They are spiny, though; their bodies are covered with hollow, barbless quills. Echidnas are monotremes, egg-laying mammals.
-           The only other living monotreme is the platypus.`
-    },
-    {
-
-    }
+export const reptiles = [
+  {
+    name: "Frill-necked lizard",
+    lifespan: "20 years",
+    food: "Small insects and spiders",
+    description: "When this unique creature feels threatened, it rises on its hind legs, opens its yellow-coloured mouth, unfurls the colorful, pleated skin flap that encircles its head, and hisses.",
+    length: "90 cm",
+    weight: "1 kg",
+    found: "Northern Australia",
+    image: "/images/animals/reptiles/reptiles-frill-neckled.png"
+  },
+  {
+    name: "Hawksbill turtle",
+    lifespan: "50 years",
+    food: "Sponges, jellyfish, sea plants",
+    description: "The Hawksbill Sea Turtle gets its common name from its distinctive beak-like mouth and overlapping scutes on the shell.",
+    length: "80 cm",
+    weight: "50 kg",
+    found: "Tropical coasts of Australia",
+    image: "/images/animals/reptiles/reptiles-hawsksbill-turtle.png"
+  },
+  {
+    name: "Perentie",
+    lifespan: "20 years",
+    food: "Carnivore, eats kangaroos, rabbits, lizards, birds",
+    description: "The perentie is the largest monitor lizard native to Australia. It is rarely seen due to its shyness.",
+    length: "2.5 m",
+    weight: "20 kg",
+    found: "Deserts",
+    image: "/images/animals/reptiles/reptiles-perentie.png"
+  }
 ]
 
-export const reptiles = [{}]
-export const birds = [{}]
+
+
+
