@@ -1,11 +1,10 @@
 import express from "express"
 import { reptiles } from "../data/data.js"
 
-const router = express.Router()
+const routerReptiles = express.Router()
 
-router.get("/", (req, res) => {
+routerReptiles.get("/", (req, res) => {
   res.render("pages/reptiles", { title: "Reptiles", reptiles })
 })
 
-export default router
-
+export default routerReptiles
