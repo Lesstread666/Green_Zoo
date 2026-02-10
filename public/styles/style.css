@@ -1,3 +1,130 @@
-*{
+* {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== MOBILE FIRST ===== */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: #204a39;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.logo {
+    height: 120px;
+    width: auto;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.brand-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #ebefe9;
+}
+
+.brand-subtitle {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #c9d6ce;
+}
+
+/* MOBILE NAVIGATION */
+.desktop-nav {
+    display: none;
+}
+
+.mobile-nav {
+    display: flex;
+}
+
+.mobile-nav ul {
+    display: flex;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+}
+
+.mobile-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.nav-icon {
+    display: block;
+    /* force block display */
+    width: 80px;
+    /* icon size */
+    height: 80px;
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 769px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 32px;
+    }
+
+    .brand {
+        gap: 6px;
+        margin-bottom: 0;
+    }
+
+    .logo {
+        height: 160px;
+    }
+
+    .brand-title {
+        font-size: 1.8rem;
+    }
+
+    .brand-subtitle {
+        font-size: 1rem;
+    }
+
+    .desktop-nav {
+        display: flex;
+    }
+
+    .desktop-nav ul {
+        display: flex;
+        gap: 64px;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+    }
+
+    .desktop-nav a {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 500;
+        text-decoration: none;
+        color: #ebefe9;
+        padding: 8px 4px;
+    }
+
+    .mobile-nav {
+        display: none;
+    }
 }
