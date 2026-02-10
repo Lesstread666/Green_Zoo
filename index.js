@@ -2,8 +2,6 @@ import express from "express"
 import * as path from "path"
 import "dotenv/config"
 
-
-
 console.log(process.env.PORT)
 
 const app = express()

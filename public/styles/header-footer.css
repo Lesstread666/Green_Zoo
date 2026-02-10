@@ -4,7 +4,8 @@
     padding: 0;
 }
 
-/* ===== MOBILE FIRST ===== */
+/* ===== MOBILE HEADER ===== */
+
 .header {
     display: flex;
     flex-direction: column;
@@ -45,7 +46,6 @@
     color: #c9d6ce;
 }
 
-/* MOBILE NAVIGATION */
 .desktop-nav {
     display: none;
 }
@@ -71,14 +71,14 @@
 
 .nav-icon {
     display: block;
-    /* force block display */
     width: 80px;
-    /* icon size */
     height: 80px;
 }
 
-/* ===== DESKTOP ===== */
+
+/* ===== DESKTOP HEADER ===== */
 @media (min-width: 769px) {
+
     .header {
         flex-direction: row;
         justify-content: space-between;
@@ -126,5 +126,82 @@
 
     .mobile-nav {
         display: none;
+    }
+}
+
+/* ===== MOBILE FOOTER ===== */
+
+.footer {
+    background-color: #937952;
+    padding: 16px 24px;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.footer-brand .footer-logo {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+}
+
+.footer-copy {
+    font-size: 1rem;
+     font-family: "Poppins", sans-serif;
+     font-weight: 300;
+}
+
+.footer-social ul {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-social a {
+    display: inline-block;
+}
+
+.social-icon {
+    height: 60px;
+    width: 60px;
+}
+
+/* ===== DESKTOP FOOTER ===== */
+@media (min-width: 769px) {
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        flex-wrap: wrap;
+    }
+
+    .footer-brand .footer-logo {
+        height: 120px;
+        width: auto;
+    }
+
+    .footer-social ul {
+        gap: 48px;
+    }
+
+    .footer-social a {
+        display: inline-block;
+        transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .footer-social a:hover {
+        transform: scale(1.15);
+        filter: brightness(1.2) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
     }
 }
