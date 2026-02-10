@@ -11,23 +11,43 @@
     <!-- Desktop Navigation -->
     <nav class="navigation-menu desktop-nav">
         <ul>
-            <li><a href="/mammals">Mammals</a></li>
-            <li><a href="/reptiles">Reptiles</a></li>
-            <li><a href="/birds">Birds</a></li>
+            <li>
+                <a href="/mammals" class="<%= activePage === 'mammals' ? 'active' : '' %>">
+                    Mammals
+                </a>
+            </li>
+
+            <li>
+                <a href="/reptiles" class="<%= activePage === 'reptiles' ? 'active' : '' %>">
+                    Reptiles
+                </a>
+            </li>
+
+            <li>
+                <a href="/birds" class="<%= activePage === 'birds' ? 'active' : '' %>">
+                    Birds
+                </a>
+            </li>
         </ul>
     </nav>
 
     <!-- Mobile Navigation -->
     <nav class="navigation-menu mobile-nav">
         <ul>
-            <li><a href="/mammals">
-                    <img class="nav-icon" src="/images/logos-icons/mammals-icon.png" alt="Mammals"></a>
+            <li><a href="/mammals" class="<%= activePage === 'mammals' ? 'active' : '' %>">
+                    <img class="nav-icon" src="/images/logos-icons/mammals-icon.png">
+                </a>
+
             </li>
-            <li><a href="/reptiles">
-                    <img class="nav-icon" src="/images/logos-icons/reptiles-icon.png" alt="Reptiles"></a>
+            <li><a href="/reptiles" class="<%= activePage === 'reptiles' ? 'active' : '' %>">
+                    <img class="nav-icon" src="/images/logos-icons/reptiles-icon.png">
+                </a>
+
             </li>
-            <li><a href="/birds">
-                    <img class="nav-icon" src="/images/logos-icons/birds-icon.png" alt="Birds"></a>
+            <li><a href="/birds" class="<%= activePage === 'birds' ? 'active' : '' %>">
+                    <img class="nav-icon" src="/images/logos-icons/birds-icon.png">
+                </a>
+
             </li>
         </ul>
     </nav>

@@ -10,6 +10,7 @@ routerReptiles.get("/", (req, res) => {
     path.join(__dirname, "/views/pages/reptiles.ejs"),
     {
       pageTitle: "Reptiles | Green Zoo",
+      activePage: "reptiles",
       reptiles
     }
   )
