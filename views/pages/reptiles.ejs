@@ -1,18 +1,1 @@
-<h1>Reptiles</h1>
-
-<div class="animal-list">
-  <% reptiles.forEach(animal => { %>
-    <div class="animal-card">
-      <img src="<%= animal.image %>" alt="<%= animal.name %>" width="200">
-      <h2><%= animal.name %></h2>
-      <p><%= animal.description %></p>
-      <ul>
-        <li><strong>Lifespan:</strong> <%= animal.lifespan %></li>
-        <li><strong>Food:</strong> <%= animal.food %></li>
-        <li><strong>Length:</strong> <%= animal.length %></li>
-        <li><strong>Weight:</strong> <%= animal.weight %></li>
-        <li><strong>Found:</strong> <%= animal.found %></li>
-      </ul>
-    </div>
-  <% }) %>
-</div>
+<%- include("../partials/reptiles-intro", { reptiles: reptiles, selectedReptile: selectedReptile, message: message }) %>
