@@ -10,13 +10,14 @@ const __dirname = path.resolve()
 
 // Routers
 import reptileRouter from "./routers/routerReptiles.js"
-
+import aboutRouter from "./routers/aboutRouter.js"
 
 app.set("view engine", "ejs")
 app.use(express.static("public"))
 
 // Reptiles Routes
 app.use("/reptiles", reptileRouter)
+app.use("/about-us", aboutRouter)
 
 app.get("/", (req, res) => {
     res.render(path.join(__dirname, "/views/pages/index.ejs"),
