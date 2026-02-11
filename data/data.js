@@ -1,6 +1,6 @@
 export const reptiles = [
   {
-    name: "Frill-necked lizard",
+    name: "Frill necked lizard",
     lifespan: "20 years",
     food: "Small insects and spiders",
     description: "When this unique creature feels threatened, it rises on its hind legs, opens its yellow-coloured mouth, unfurls the colorful, pleated skin flap that encircles its head, and hisses.",

@@ -11,6 +11,7 @@ const __dirname = path.resolve()
 // Routers
 import reptileRouter from "./routers/routerReptiles.js"
 
+
 app.set("view engine", "ejs")
 app.use(express.static("public"))
 
