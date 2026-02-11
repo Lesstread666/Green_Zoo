@@ -23,9 +23,10 @@ routerReptiles.get("/", (req, res) => {
   }
 
   res.render("pages/reptiles", {
-    title: selectedReptile ? selectedReptile.name : "Reptiles",
+    pageTitle: selectedReptile ? selectedReptile.name : "Reptiles",
     reptiles,
     selectedReptile,
+    activePage : "reptiles",
     message
   });
 });
@@ -43,9 +44,10 @@ routerReptiles.get("/:slug", (req, res) => {
   }
 
   res.render("pages/reptiles", {
-    title: selectedReptile ? selectedReptile.name : "Reptiles",
+    pageTitle: selectedReptile ? selectedReptile.name : "Reptiles",
     reptiles,
     selectedReptile,
+    activePage : "reptiles",
     message
   });
 });
