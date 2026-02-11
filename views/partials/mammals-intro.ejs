@@ -1,0 +1,60 @@
+<div style="display: flex; gap: 40px;">
+
+    <!-- SIDEBAR -->
+    <div style="width: 250px;">
+        <h3>Mammals</h3>
+        <ul>
+            <% mammals.forEach(mammal=> { %>
+                <li>
+                    <a href="/mammals/<%= mammal.name.toLowerCase().replace(/\s+/g, " -") %>">
+                        <%= mammal.name %>
+                    </a>
+                </li>
+                <% }) %>
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div style="flex: 1;">
+        <% if (message) { %>
+            <p style="color: red;">
+                <%= message %>
+            </p>
+            <% } %>
+
+                <% if (!selectedMammal) { %>
+                    <h2>Welcome to the Mammals Section</h2>
+                    <p>
+                        Mammals in Australia form a group that is quite different from what you find in the rest of the world. 
+                        The main reason for this is the continent’s long isolation. Australia broke away from other landmasses millions 
+                        of years ago, and its wildlife continued to develop without influence from animals in Asia, Africa or the Americas. 
+                        This allowed older branches of the mammal family to survive and adapt in their own way.
+                    </p>
+                    <% } else { %>
+                        <h2>
+                            <%= selectedMammal.name %>
+                        </h2>
+                        <img src="<%= selectedMammal.image %>" alt="<%= selectedMammal.name %>" width="300">
+
+                        <p><strong>Lifespan:</strong>
+                            <%= selectedMammal.lifespan %>
+                        </p>
+                        <p><strong>Food:</strong>
+                            <%= selectedMammal.food %>
+                        </p>
+                        <p><strong>Length:</strong>
+                            <%= selectedMammal.length %>
+                        </p>
+                        <p><strong>Weight:</strong>
+                            <%= selectedMammal.weight %>
+                        </p>
+                        <p><strong>Found:</strong>
+                            <%= selectedMammal.found %>
+                        </p>
+                        <p>
+                            <%= selectedMammal.description %>
+                        </p>
+                        <% } %>
+    </div>
+
+</div>

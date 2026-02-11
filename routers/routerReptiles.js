@@ -9,8 +9,6 @@ const __dirname = path.resolve();
 function normalizeName(name) {
   return name.toLowerCase().replace(/\s+/g, " ").trim();
 }
-
-/* /reptiles  (list + ?name=) */
 routerReptiles.get("/", (req, res) => {
   const animalName = req.query.name
     ? normalizeName(req.query.name)
@@ -63,5 +61,4 @@ routerReptiles.get("/:slug", (req, res) => {
     }
   );
 });
-
 export default routerReptiles;
