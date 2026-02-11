@@ -2,8 +2,6 @@ import express from "express"
 import * as path from "path"
 import "dotenv/config"
 
-
-
 console.log(process.env.PORT)
 
 const app = express()
@@ -22,7 +20,8 @@ app.use("/reptiles", reptileRouter)
 app.get("/", (req, res) => {
     res.render(path.join(__dirname, "/views/pages/index.ejs"),
         {
-             pageTitle: `Green Zoo`
+             pageTitle: "Green Zoo",
+             activePage: "Home"
         })
 })
 
