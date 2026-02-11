@@ -1,25 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%= pageTitle %>
-    </title>
-    <link rel="stylesheet" href="/styles/typography.css">
-    <link rel="stylesheet" href="/styles/header-footer.css">
-    <link rel="stylesheet" href="/styles/about-us.css">
-</head>
+<%- include("../partials/head") %>
 
-<body>
+
     <%- include("../partials/header") %>
 
-        <main>
-            <%- include("../partials/about-us") %>
-        </main>
 
-        <%- include("../partials/footer") %>
-</body>
+        <%- include("../partials/about-us") %>
+
+
+            <%- include("../partials/footer") %>
+
 
 </html>

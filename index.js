@@ -10,7 +10,7 @@ const __dirname = path.resolve()
 
 // Routers
 import reptileRouter from "./routers/routerReptiles.js"
-import aboutRouter from "./routers/aboutRouter.js"
+import aboutRouter from "./routers/routerAbout.js"
 
 app.set("view engine", "ejs")
 app.use(express.static("public"))

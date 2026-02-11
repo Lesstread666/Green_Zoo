@@ -16,7 +16,7 @@ export const team = [
         image: "/images/profile/imran-avatar.png",
         social: {
             github: "https://github.com/imrankhan0503",
-            vercel: "https://vercel.com/vladislav-s-projects-ef0f9650"
+            vercel: "https://vercel.com/imrankhan0503"
         }
     }
 ]
