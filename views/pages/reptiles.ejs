@@ -1,25 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <title>
-    <%= pageTitle %>
-  </title>
-  <link rel="stylesheet" href="/styles/typography.css">
-  <link rel="stylesheet" href="/styles/header-footer.css">
-  <script src="index.js" defer></script>
-</head>
+<%- include("../partials/head") %>
 
-<body>
-  <%- include("../partials/header") %>
-    <%- include("../partials/reptiles-intro", { reptiles: reptiles, selectedReptile: selectedReptile, message: message
-      }) %>
+  <body>
+    <%- include("../partials/header") %>
 
+      <%- include("../partials/reptiles-intro", { reptiles, selectedReptile, message }) %>
 
-
-
-      <%- include("../partials/footer") %>
-</body>
+        <%- include("../partials/footer") %>
+  </body>
 
 </html>

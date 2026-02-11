@@ -1,0 +1,100 @@
+/* ---- Page layout ---- */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+}
+
+main {
+    flex: 1;
+    background-color: #cfded3; /* clearly green, not white */
+}
+
+/* ---- Team section ---- */
+.team-section {
+    display: flex;
+    flex-direction: column; /* mobile */
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+}
+
+/* ---- Team member card ---- */
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    width: 100%;
+    max-width: 320px;
+
+    background-color: #b6cdbb; /* visible green card */
+    border: 1px solid #8fae98;
+    border-radius: 14px;
+
+    padding: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* ---- Avatar ---- */
+.team-member img {
+    width: 150px;
+    height: 200px;
+    border-radius: 14px;
+    object-fit: cover;
+    margin-bottom: 16px;
+}
+
+/* ---- Text ---- */
+.team-member h2 {
+    margin: 8px 0;
+    font-size: 1.35rem;
+    color: #20342a; /* dark green */
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #2f4a3b;
+    margin-bottom: 18px;
+}
+
+/* ---- Social links ---- */
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-links a img {
+    width: 60px;
+    height: 60px;
+}
+
+/* ---- Desktop ---- */
+@media (min-width: 769px) {
+    .team-section {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch; /* IMPORTANT: equal visual height */
+        gap: 48px;
+        padding: 48px 24px;
+    }
+
+    .team-member {
+        max-width: 260px;
+    }
+
+    .team-member img {
+        width: 160px;
+        height: 220px;
+    }
+
+    .social-links a img {
+        width: 60px;
+        height: 60px;
+    }
+}
