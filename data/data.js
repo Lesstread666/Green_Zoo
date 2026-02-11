@@ -52,10 +52,10 @@ export const mammals = [
     length: "70 cm",
     weight: "10 kg",
     found: "Tasmania",
-    image: "/images/animals/mammals/mammals-tasmanian.png"
+    image: "/images/animals/mammals/mammals-tasmanian-devil.png"
   },
   {
-    name: "quokka",
+    name: "Quokka",
     lifespan: "10 years",
     group: "mammals",
     food: "Plant eaters, they munch on shrubs and grasses",
