@@ -40,7 +40,7 @@ routerMammals.get("/", (req, res) => {
   );
 });
 
-/* /reptiles/:slug */
+/* /mammals/:slug */
 routerMammals.get("/:slug", (req, res) => {
   const slug = req.params.slug;
   const animalName = normalizeName(slug.replace(/-/g, " "));

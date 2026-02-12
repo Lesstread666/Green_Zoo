@@ -1,33 +1,65 @@
-console.log("Hello")
+import express from "express";
+import * as path from "path";
+import { birds } from "../data/data.js";
 
-// import express from "express"
-// import * as path from "path"
-// import {italian} from "../data/data.js"
+const routerBirds = express.Router();
+const __dirname = path.resolve();
 
-// const italianFoodRouter = express.Router()
-// const __dirname = path.resolve()
+/* Helper: normalize names */
+function normalizeName(name) {
+  return name.toLowerCase().replace(/\s+/g, " ").trim();
+}
+routerBirds.get("/", (req, res) => {
+      
+  const animalName = req.query.name
+    ? normalizeName(req.query.name)
+    : null;
 
-// italianFoodRouter.get("/", (req, res) => {
-//     console.log(italian)
-//     res.render(path.join(__dirname, "/views/pages/italian-food"),
-//         {
-//             pageTitle: `Food - Italian`,
-//             title: `Italian food`,
-//             subtitle: `Discover you favorite italian food`,
-//             description: `ITALIAN - Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt nulla itaque assumenda ex non suscipit
-//                     atque eveniet rem laboriosam asperiores inventore dolores a, eius est necessitatibus facere
-//                     accusamus, repudiandae vitae!
-//                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt nulla itaque assumenda ex non suscipit
-//                     atque eveniet rem laboriosam asperiores inventore dolores a, eius est necessitatibus facere
-//                     accusamus, repudiandae vitae!
-//                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat labore laboriosam iusto quo consequatur, inventore quaerat accusantium,
-//                     consectetur libero harum, deleniti modi cupiditate cumque. Iusto laudantium similique id sapiente natus.`,
-//             className: `italian`,
-//             pageType: `italian`,
-//             partialTimes: 3,
-//             italianList: italian
-//         })
-// })
+  let selectedBird = null;
+  let message = null;
 
+  if (animalName) {
+    selectedBird = birds.find(
+      r => normalizeName(r.name) === animalName
+    );
 
-// export default italianFoodRouter
+    if (!selectedBird) {
+      message = "Animal not found";
+    }
+  }
+
+  res.render(
+    path.join(__dirname, "/views/pages/birds.ejs"),
+    {
+      pageTitle: selectedBird ? selectedBird.name : "Birds",
+      birds,
+      selectedBird,
+      activePage: "birds",
+      message
+    }
+  );
+});
+
+/* /birds/:slug */
+routerBirds.get("/:slug", (req, res) => {
+  const slug = req.params.slug;
+  const animalName = normalizeName(slug.replace(/-/g, " "));
+
+  const selectedBird = birds.find(
+    r => normalizeName(r.name) === animalName
+  );
+
+  const message = selectedBird ? null : "Animal not found";
+
+  res.render(
+    path.join(__dirname, "/views/pages/birds.ejs"),
+    {
+      pageTitle: selectedBird ? selectedBird.name : "Birds",
+      birds,
+      selectedBird,
+      activePage: "birds",
+      message
+    }
+  );
+});
+export default routerBirds;
