@@ -2,63 +2,77 @@
 
     <div class="hamburger-menu">&#9776;</div>
 
+    <!-- SIDEBAR -->
     <aside class="section-sidebar">
         <h3>Reptiles</h3>
         <ul>
             <% reptiles.forEach(reptile=> { %>
                 <li>
                     <a href="/reptiles/<%= reptile.name.toLowerCase().replace(/\s+/g, '-') %>"
-                       class="<%= selectedReptile && selectedReptile.name===reptile.name ? 'active' : '' %>">
+                        class="<%= selectedReptile && selectedReptile.name===reptile.name ? 'active' : '' %>">
                         <%= reptile.name %>
                     </a>
                 </li>
-            <% }) %>
+                <% }) %>
         </ul>
     </aside>
 
+    <!-- MAIN CONTENT -->
     <main class="section-main <%= !selectedReptile ? activePage + '-intro' : '' %>">
 
         <% if (message) { %>
             <p class="section-message">
                 <%= message %>
             </p>
-        <% } %>
+            <% } %>
 
-        <% if (!selectedReptile) { %>
+                <% if (!selectedReptile) { %>
+                    <div class="intro-text-wrapper">
+                        <h2>Welcome to the Reptiles Section</h2>
 
-            <h2>Welcome to the Reptiles Section</h2>
+                        <p>
+                            Australia is home to some of the world's most remarkable reptiles,
+                            with over 1,000 species found across deserts, forests, wetlands,
+                            and coastal regions. Many of them are unique to the continent,
+                            including a wide range of skinks, geckos, pythons, and monitor lizards.
+                            Australia also hosts some of the most venomous snakes on the planet,
+                            yet most species avoid human contact and play an essential role in
+                            balancing ecosystems. From the ancient and slow-moving freshwater
+                            turtles to the lightning-fast perentie — the largest monitor lizard
+                            in Australia — reptiles continue to shape the continent's biodiversity.
+                            Despite their adaptability, many species face threats from habitat
+                            loss, invasive predators, and climate change.
+                        </p>
+                    </div>
+                    <% } else { %>
 
-            <p>
-                Australia is home to some of the world's most remarkable reptiles,
-                with over 1,000 species found across deserts, forests, wetlands,
-                and coastal regions. Many of them are unique to the continent,
-                including a wide range of skinks, geckos, pythons, and monitor lizards.
-                Australia also hosts some of the most venomous snakes on the planet,
-                yet most species avoid human contact and play an essential role in
-                balancing ecosystems. From the ancient and slow-moving freshwater
-                turtles to the lightning-fast perentie — the largest monitor lizard
-                in Australia — reptiles continue to shape the continent's biodiversity.
-                Despite their adaptability, many species face threats from habitat
-                loss, invasive predators, and climate change.
-            </p>
+                        <h2>
+                            <%= selectedReptile.name %>
+                        </h2>
 
-        <% } else { %>
+                        <img src="<%= selectedReptile.image %>" alt="<%= selectedReptile.name %>">
 
-            <h2>
-                <%= selectedReptile.name %>
-            </h2>
+                        <p><strong>Lifespan:</strong>
+                            <%= selectedReptile.lifespan %>
+                        </p>
+                        <p><strong>Food:</strong>
+                            <%= selectedReptile.food %>
+                        </p>
+                        <p><strong>Length:</strong>
+                            <%= selectedReptile.length %>
+                        </p>
+                        <p><strong>Weight:</strong>
+                            <%= selectedReptile.weight %>
+                        </p>
+                        <p><strong>Found:</strong>
+                            <%= selectedReptile.found %>
+                        </p>
 
-            <img src="<%= selectedReptile.image %>" alt="<%= selectedReptile.name %>">
+                        <p>
+                            <%= selectedReptile.description %>
+                        </p>
 
-            <p><strong>Lifespan:</strong> <%= selectedReptile.lifespan %></p>
-            <p><strong>Food:</strong> <%= selectedReptile.food %></p>
-            <p><strong>Length:</strong> <%= selectedReptile.length %></p>
-            <p><strong>Weight:</strong> <%= selectedReptile.weight %></p>
-            <p><strong>Found:</strong> <%= selectedReptile.found %></p>
-
-            <p><%= selectedReptile.description %></p>
-
-        <% } %>
+                        <% } %>
 
     </main>
 

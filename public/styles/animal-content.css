@@ -10,10 +10,48 @@ body,
     padding: 0;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.home-intro,
+.mammals-intro,
+.reptiles-intro,
+.birds-intro {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.home-intro {
+    background-image: url("/images/backgrounds/bg-main.png");
+}
+
+.mammals-intro {
+    background-image: url("/images/backgrounds/bg-mammals.png");
+}
+
+.reptiles-intro {
+    background-image: url("/images/backgrounds/bg-reptiles.png");
+}
+
+.birds-intro {
+    background-image: url("/images/backgrounds/bg-birds.png");
+}
+
 /* MOBILE */
 
 .main-section-wrapper {
     position: relative;
+    flex: 1;
 }
 
 .section-sidebar {
@@ -24,7 +62,7 @@ body,
     width: 250px;
     height: 100%;
     background-color: #366652;
-    padding: 60px 20px 20px 20px; 
+    padding: 60px 20px 20px 20px;
     overflow-y: auto;
     transition: left 0.3s ease;
 }
@@ -112,11 +150,12 @@ body,
 }
 
 .intro-text-wrapper {
-    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 20px 30px;
-    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 8px;
     color: #f0f0e9;
+    max-width: 800px;
+    text-align: center;
 }
 
 @media (min-width: 769px) {
@@ -129,7 +168,7 @@ body,
     }
 
     .section-sidebar {
-        position: relative; 
+        position: relative;
         left: 0;
         width: 250px;
         height: auto;
