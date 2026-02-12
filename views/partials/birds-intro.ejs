@@ -1,42 +1,51 @@
-<div style="display: flex; gap: 40px;">
+<div class="main-section-wrapper">
+
+    <div class="hamburger-menu">&#9776;</div>
 
     <!-- SIDEBAR -->
-    <div style="width: 250px;">
+    <aside class="section-sidebar">
         <h3>Birds</h3>
         <ul>
             <% birds.forEach(bird=> { %>
                 <li>
-                    <a href="/birds/<%= bird.name.toLowerCase().replace(/\s+/g, " -") %>">
-                        <%= bird.name %>
+                    <a href="/birds/<%= bird.name.toLowerCase().replace(/\s+/g, " -") %>"
+                        class="<%= selectedBird && selectedBird.name===bird.name ? 'active' : '' %>">
+                            <%= bird.name %>
                     </a>
                 </li>
                 <% }) %>
         </ul>
-    </div>
+    </aside>
 
     <!-- MAIN CONTENT -->
-    <div style="flex: 1;">
+    <main class="section-main <%= !selectedBird ? activePage + '-intro' : '' %>">>
         <% if (message) { %>
-            <p style="color: red;">
+            <p class="section-message">
                 <%= message %>
             </p>
             <% } %>
 
                 <% if (!selectedBird) { %>
-                    <h2>Welcome to the Birds Section</h2>
-                    <p>
-                        Australia is home to over 800 bird species, with roughly 350 endemic.Many Australian birds are
-                        famous
-                        for their striking colors, such as the parrots and cockatoos, as well as unique behaviors like
-                        the
-                        Lyrebird's incredible mimicry.Kookaburra is amous for its loud, laughing call, commonly heard in
-                        urban
-                        and rural areas. Cockatoos is a diverse group of parrots, often seen in large, noisy flocks.
-                        Climate
-                        change and land clearing have also negatively impacted bird populations, with major bushfires
-                        causing
-                        significant loss of life.
-                    </p>
+                    <div class="intro-text-wrapper">
+                        <h2>Welcome to the Birds Section</h2>
+                        <p>
+                            Australia is home to over 800 bird species, with roughly 350 endemic.Many Australian birds
+                            are
+                            famous
+                            for their striking colors, such as the parrots and cockatoos, as well as unique behaviors
+                            like
+                            the
+                            Lyrebird's incredible mimicry.Kookaburra is amous for its loud, laughing call, commonly
+                            heard in
+                            urban
+                            and rural areas. Cockatoos is a diverse group of parrots, often seen in large, noisy flocks.
+                            Climate
+                            change and land clearing have also negatively impacted bird populations, with major
+                            bushfires
+                            causing
+                            significant loss of life.
+                        </p>
+                    </div>
                     <% } else { %>
                         <h2>
                             <%= selectedBird.name %>
@@ -62,6 +71,6 @@
                             <%= selectedBird.description %>
                         </p>
                         <% } %>
-    </div>
+    </main>
 
 </div>

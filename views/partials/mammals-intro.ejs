@@ -1,35 +1,47 @@
-<div style="display: flex; gap: 40px;">
+<div class="main-section-wrapper">
+
+    <div class="hamburger-menu">&#9776;</div>
 
     <!-- SIDEBAR -->
-    <div style="width: 250px;">
+    <aside class="section-sidebar">
         <h3>Mammals</h3>
         <ul>
             <% mammals.forEach(mammal=> { %>
                 <li>
-                    <a href="/mammals/<%= mammal.name.toLowerCase().replace(/\s+/g, " -") %>">
-                        <%= mammal.name %>
+                    <a href="/mammals/<%= mammal.name.toLowerCase().replace(/\s+/g, " -") %>"
+                        class="<%= selectedMammal && selectedMammal.name===mammal.name ? 'active' : '' %>">
+                            <%= mammal.name %>
                     </a>
                 </li>
                 <% }) %>
         </ul>
-    </div>
+    </aside>
 
     <!-- MAIN CONTENT -->
-    <div style="flex: 1;">
+    <main class="section-main <%= !selectedMammal ? activePage + '-intro' : '' %>">
+
         <% if (message) { %>
-            <p style="color: red;">
+            <p class="section-message">
                 <%= message %>
             </p>
             <% } %>
 
                 <% if (!selectedMammal) { %>
-                    <h2>Welcome to the Mammals Section</h2>
-                    <p>
-                        Mammals in Australia form a group that is quite different from what you find in the rest of the world. 
-                        The main reason for this is the continent’s long isolation. Australia broke away from other landmasses millions 
-                        of years ago, and its wildlife continued to develop without influence from animals in Asia, Africa or the Americas. 
-                        This allowed older branches of the mammal family to survive and adapt in their own way.
-                    </p>
+                    <div class="intro-text-wrapper">
+                        <h2>Welcome to the Mammals Section</h2>
+                        <p>
+                            Mammals in Australia form a group that is quite different from what you find in the rest of
+                            the
+                            world.
+                            The main reason for this is the continent’s long isolation. Australia broke away from other
+                            landmasses millions
+                            of years ago, and its wildlife continued to develop without influence from animals in Asia,
+                            Africa
+                            or the Americas.
+                            This allowed older branches of the mammal family to survive and adapt in their own way.
+                        </p>
+                    </div>
+
                     <% } else { %>
                         <h2>
                             <%= selectedMammal.name %>
@@ -55,6 +67,6 @@
                             <%= selectedMammal.description %>
                         </p>
                         <% } %>
-    </div>
+    </main>
 
 </div>

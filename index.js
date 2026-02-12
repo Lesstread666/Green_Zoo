@@ -9,18 +9,20 @@ const port = process.env.PORT;
 const __dirname = path.resolve()
 
 // Routers
-
+import homeRouter from "./routers/routerHome.js"
+import mammalsRouter from "./routers/routerMammals.js"
 import reptileRouter from "./routers/routerReptiles.js"
-import mammalsRouter from "./routers/routerMammals.js";
 import birdsRouter from "./routers/routerBirds.js"
 import aboutRouter from "./routers/routerAbout.js"
 
 app.set("view engine", "ejs")
 app.use(express.static("public"))
 
+//Home Routes
+app.use("/home", homeRouter)
+
 // Reptiles Routes
 app.use("/reptiles", reptileRouter)
-app.use("/about-us", aboutRouter)
 
 // Mammals Routes
 app.use("/mammals", mammalsRouter);
@@ -28,14 +30,12 @@ app.use("/mammals", mammalsRouter);
 // Birds Routes
 app.use("/birds", birdsRouter);
 
-app.get("/", (req, res) => {
-    res.render(path.join(__dirname, "/views/pages/index.ejs"),
-        {
-             pageTitle: "Green Zoo",
-             activePage: "Home"
-        })
-})
+// About us Routes
+app.use("/about-us", aboutRouter);
 
+app.get("/", (req, res) => {
+    res.redirect("/home");
+});
 
 app.listen(port, () => console.log(`Listening on the port ${port}`))
 
