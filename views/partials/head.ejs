@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="/styles/typography.css">
     <link rel="stylesheet" href="/styles/header-footer.css">
 
+    <!-- For all pages except About us -->
+     <% if (activePage !== "about") { %>
+        <link rel="stylesheet" href="/styles/animal-content.css">
+    <% } %>
+
     <!-- About us files -->
     <% if (activePage === "about") { %>
         <link rel="stylesheet" href="/styles/about-us.css">

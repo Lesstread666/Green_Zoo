@@ -1,4 +1,3 @@
-/* ---- Page layout ---- */
 body,
 html {
     margin: 0;
@@ -11,37 +10,31 @@ html {
 
 main {
     flex: 1;
-    background-color: #cfded3; /* clearly green, not white */
+    background-color: #cfded3; 
 }
 
-/* ---- Team section ---- */
 .team-section {
     display: flex;
-    flex-direction: column; /* mobile */
+    flex-direction: column; 
     align-items: center;
     gap: 24px;
     padding: 24px;
 }
 
-/* ---- Team member card ---- */
 .team-member {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-
     width: 100%;
     max-width: 320px;
-
-    background-color: #b6cdbb; /* visible green card */
+    background-color: #b6cdbb; 
     border: 1px solid #8fae98;
     border-radius: 14px;
-
     padding: 24px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
-/* ---- Avatar ---- */
 .team-member img {
     width: 150px;
     height: 200px;
@@ -50,11 +43,10 @@ main {
     margin-bottom: 16px;
 }
 
-/* ---- Text ---- */
 .team-member h2 {
     margin: 8px 0;
     font-size: 1.35rem;
-    color: #20342a; /* dark green */
+    color: #20342a;
 }
 
 .team-member p {
@@ -63,7 +55,6 @@ main {
     margin-bottom: 18px;
 }
 
-/* ---- Social links ---- */
 .social-links {
     display: flex;
     gap: 12px;
@@ -74,12 +65,12 @@ main {
     height: 60px;
 }
 
-/* ---- Desktop ---- */
+
 @media (min-width: 769px) {
     .team-section {
         flex-direction: row;
         justify-content: center;
-        align-items: stretch; /* IMPORTANT: equal visual height */
+        align-items: stretch; 
         gap: 48px;
         padding: 48px 24px;
     }

@@ -1,1 +1,14 @@
-<%- include("../partials/birds-intro", { birds: birds, selectedBird: selectedBird, message: message }) %>
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head") %>
+
+    <body>
+        <%- include("../partials/header") %>
+
+            <%- include("../partials/birds-intro", { birds, selectedBird, message }) %>
+
+                <%- include("../partials/footer") %>
+    </body>
+
+</html>
