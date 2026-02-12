@@ -1,0 +1,66 @@
+<div class="main-section-wrapper">
+
+    <div class="hamburger-menu">&#9776;</div>
+
+    <aside class="section-sidebar">
+
+        <h3>Mammals</h3>
+        <ul>
+            <% mammals.forEach(mammal => { %>
+                <li>
+                    <a href="/home/mammals/<%= mammal.name.toLowerCase().replace(/\s+/g, '-') %>"
+                       class="<%= selectedAnimal && selectedAnimal.name === mammal.name ? 'active' : '' %>">
+                        <%= mammal.name %>
+                    </a>
+                </li>
+            <% }) %>
+        </ul>
+
+        <h3>Reptiles</h3>
+        <ul>
+            <% reptiles.forEach(reptile => { %>
+                <li>
+                    <a href="/home/reptiles/<%= reptile.name.toLowerCase().replace(/\s+/g, '-') %>"
+                       class="<%= selectedAnimal && selectedAnimal.name === reptile.name ? 'active' : '' %>">
+                        <%= reptile.name %>
+                    </a>
+                </li>
+            <% }) %>
+        </ul>
+
+        <h3>Birds</h3>
+        <ul>
+            <% birds.forEach(bird => { %>
+                <li>
+                    <a href="/home/birds/<%= bird.name.toLowerCase().replace(/\s+/g, '-') %>"
+                       class="<%= selectedAnimal && selectedAnimal.name === bird.name ? 'active' : '' %>">
+                        <%= bird.name %>
+                    </a>
+                </li>
+            <% }) %>
+        </ul>
+
+    </aside>
+
+    <main class="section-main <%= !selectedAnimal ? activePage + '-intro' : '' %>">
+
+        <% if (message) { %>
+            <p class="section-message"><%= message %></p>
+        <% } %>
+
+        <% if (!selectedAnimal) { %>
+            <div class="intro-text-wrapper">
+                <h2>Welcome to Green Zoo Wildlife Park</h2>
+                <p>Discover and experience nature in one place</p>
+            </div>
+        <% } else { %>
+
+            <h2><%= selectedAnimal.name %></h2>
+            <img src="<%= selectedAnimal.image %>" alt="<%= selectedAnimal.name %>">
+            <p><%= selectedAnimal.description %></p>
+
+        <% } %>
+
+    </main>
+
+</div>
