@@ -44,7 +44,7 @@ export const mammals = [
     image: "/images/animals/mammals/mammals-echidna.png"
   },
   {
-    name: "Tasmanian Devil ",
+    name: "Tasmanian Devil",
     lifespan: "5 years",
     group: "mammals",
     food: "A predator, then eat meat from other animals such as wallabies and wombats",
@@ -81,7 +81,7 @@ export const birds = [
     image: "/images/animals/birds/birds-black-cockatoo.png"
   },
   {
-    name: "Kookaburra ",
+    name: "Kookaburra",
     lifespan: "20 years",
     group: "birds",
     food: "Insects and smalll animals including snakes, frogs and lizards",
